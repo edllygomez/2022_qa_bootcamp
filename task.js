@@ -53,3 +53,39 @@ const countFrequency = str => {
    return frequency;
 };
 console.log(countFrequency(string));
+
+
+//task2 
+
+function countDigit(n)
+{
+    if (n == 0)
+        return 0;
+  
+    return (1 + countDigit(n / 10));
+}
+  
+// Returns true if n is
+// Narcissistic number
+function check( n)
+{
+    // count the number of digits
+    let l = countDigit(n);
+    let dup = n;
+    let sum = 0;
+  
+    // calculates the sum of digits
+    // raised to power
+    while (dup)
+    {
+        sum += Math.pow(dup % 10, l);
+        dup = parseINT(dup / 10);
+    }
+  
+    return (n == sum);
+}
+let n = 0987;
+if (check(!n))
+    console.log("True")
+else
+console.log("No")
