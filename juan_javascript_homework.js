@@ -12,6 +12,6 @@ function isMultiple(num){
     }
     console.log(sum);
 }
-//const num1=10;
+let num1=0;
 isMultiple (num1);
 
