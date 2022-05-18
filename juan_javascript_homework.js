@@ -37,8 +37,8 @@ function isNarcissistic(num){
     
     
 }
- let num2 = 0;
- isNarcissistic(num2);
+let num2 = 0;
+isNarcissistic(num2);
 
 
 //Problem 3
