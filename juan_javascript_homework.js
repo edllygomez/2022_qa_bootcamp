@@ -16,7 +16,6 @@ let num1=0;
 isMultiple (num1);
 
 //Problem 2
-
 function isNarcissistic(num){
     if(num>0 && !isNaN(num)){
         let numS = num.toString();
@@ -41,4 +40,23 @@ function isNarcissistic(num){
  let num2 = 0;
  isNarcissistic(num2);
 
+
+//Problem 3
+function maskify(input){
+    let nString = input.toString();
+    let nArray = Array.from(nString);
+    if(nArray.length>4){
+        let j=0;
+        for(let i=nArray.length; i>0; i--){
+            j++;
+            if(j<=3){
+                nArray[i]=nArray.push('*');
+            }
+            console.log (nArray[i]);
+        }
+    } else console.log(input);
+    
+}
+let entry = "horse";
+maskify(entry);
  
