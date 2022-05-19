@@ -50,9 +50,9 @@ function maskify(input){
         for(let i=nArray.length; i>0; i--){
             j++;
             if(j<=3){
-                nArray[i]=nArray.push('*');
+                nArray[i]='*';
             }
-            console.log (nArray[i]);
+            console.log (nArray[j-1]);
         }
     } else console.log(input);
     
