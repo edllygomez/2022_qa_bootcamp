@@ -94,15 +94,22 @@ const countDuplicates = (text) => {
     let count = 0
     let totalCount = 0
 
-    function duplicates(prev, curr, index, arr) {
-        index == 1 ? expression = `${prev}` : expression = `${curr}`
-        let regex = new RegExp(expression, 'ig')
-        count = (text.match(regex) || []).length;
-        count <= 1 ? totalCount += 0 : totalCount++
-        text = text.replace(regex,'')
-        return totalCount
-    }
+    console.log(text)
 
-    return [...text.toString()].map(String).reduce(duplicates)
+    if(text) {
+        function duplicates(prev, curr, index, arr) {
+            index == 1 ? expression = `${prev}` : expression = `${curr}`
+            let regex = new RegExp(expression, 'ig')
+            count = (text.match(regex) || []).length;
+            count <= 1 ? totalCount += 0 : totalCount++
+            text = text.replace(regex,'')
+            return totalCount
+        }
+
+        return [...text.toString()].map(String).reduce(duplicates)
+    }
+    else {
+        return 0
+    }
 
 }
