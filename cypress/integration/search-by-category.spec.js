@@ -12,10 +12,10 @@ describe('Search from Category', ()=>{
         cy.get('.add_to_cart_button').first().click();
         //go to cart and validate
         cy.get('li .added_to_cart').click();
-        cy.url().should('include', '/carts');
+        cy.url().should('include', '/cart');
         cy.title().should('include', 'Cart');
         cy.contains('[data-title="Product"]', 'Hoodie with Logo').should('be.visible');
-        cy.contains('[data-title="Price"]', "$45.00").should('be.visible');
+        cy.contains('[data-title="Subtotal"]', "$45.00").should('be.visible');
 
     });
 });
