@@ -3,7 +3,7 @@
 import { ShopByCategoryPage } from '../page-objects/pages/shop-by-category'
 import { ProductTile } from '../page-objects/pages/product-tile'
 
-describe('Search from Category', () => {
+describe('Search from Search Bar', () => {
 
     const productName = 'Zipper'
 
@@ -11,7 +11,7 @@ describe('Search from Category', () => {
         cy.visit('/')
     })
 
-    it('Should search by category and add product to cart', ()=> {
+    it('Search from search bar and Validate that searched product exists', ()=> {
         ShopByCategoryPage.searchForProduct(productName)
         ProductTile.validateSearchedProduct(productName)
     })
