@@ -1,8 +1,8 @@
 ///<reference types="Cypress"/>
 
-import { ProductTitle } from "../page-objects/pages/product-title";
-import { ShopByCategoryPage } from "../page-objects/pages/shop-by-category";
-import { CartPage } from '../page-objects/pages/cart';
+import {ProductTitle} from "../pages/product-title";
+import { ShopByCategoryPage } from "../pages/shop-by-category";
+import { CartPage } from '../pages/cart';
 
 describe('Search from Category', () => {
 

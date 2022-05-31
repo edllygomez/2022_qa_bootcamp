@@ -3,9 +3,9 @@ export class ShopByCategory {
         getCategoryByTextLink: (productTitle) => cy.get(`a[href*=${productTitle}]`),
     }//elementsArray
 
-selectCategory(category){
-    this.elements.getCategoryByTextLink(category).click();
-}//selectCategory
+    selectCategory(category) {
+        this.elements.getCategoryByTextLink(category).click();
+    }//selectCategory
 
 }//class
 
