@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-export class SearchBar {
+export class SearchBarComponent {
   searchBar = () => cy.get("#woocommerce-product-search-field-0");
   searchBarSecundary = () => cy.get("#search-2 > form > label > input");
 

@@ -2,54 +2,63 @@
 
 import { LandingPage } from "../page-objects/landingPage";
 import { ProductPage } from "../page-objects/productpage";
+import { SearchResultsPage } from "../page-objects/searchResultsPage";
 
 describe("Test searching capabilities", () => {
   const landingPage = new LandingPage();
   const productPage = new ProductPage();
-  const productCode = "hoodie";
-  const validSearchParams = ["Pocket"]; //Edit this to test more search params
-  const invalidSearchParams = [];
+  const searchResultsPage = new SearchResultsPage();
 
-  // beforeEach(() => {
-  //   landingPage.navigate();
-  // });
+  const productCode = "hoodie";
+  const validSearchParams = ["Pocket", "Zipper"]; //Edit this to test more search params
+  //const invalidSearchParams = []; //Placeholder for future negative tests
 
   validSearchParams.map((searchParam) => {
-    it("should search from landing page using main search bar", () => {
-      landingPage.navigate();
-      landingPage.searchProduct(searchParam);
-      const productTitle = productPage.productDetails.productTitle();
+    describe(`Tests using ${searchParam} as search parameter`, () => {
+      it("should search from landing page using main search bar", () => {
+        landingPage.navigate();
+        landingPage.searchProduct(searchParam);
+        const productTitle = productPage.productDetails.productTitle();
 
-      productTitle.should(($productTitle) => {
-        const text = $productTitle.text().toLowerCase();
-        const expectedText = searchParam.toLowerCase();
-        expect(text).contain(expectedText);
+        productTitle.should(($productTitle) => {
+          const text = $productTitle.text().toLowerCase();
+          const expectedText = searchParam.toLowerCase();
+          expect(text).contain(expectedText);
+        });
       });
-    });
 
-    it("should search from product page using main search bar", () => {
-      productPage.navigate(productCode);
-      productPage.searchProduct(searchParam);
-      const productTitle = productPage.productDetails.productTitle();
+      it("should search from product page using main search bar", () => {
+        productPage.navigate(productCode);
+        productPage.searchProduct(searchParam);
+        const productTitle = productPage.productDetails.productTitle();
 
-      productTitle.should(($productTitle) => {
-        const text = $productTitle.text().toLowerCase();
-        const expectedText = searchParam.toLowerCase();
-        expect(text).contain(expectedText);
+        productTitle.should(($productTitle) => {
+          const text = $productTitle.text().toLowerCase();
+          const expectedText = searchParam.toLowerCase();
+          expect(text).contain(expectedText);
+        });
       });
-    });
 
-    //ToDo: This test is failing because searching from secundary search bar always goes to search results page.
-    // Search results POM and components are pending to be added.
-    it("should search from product page using secundary search bar", () => {
-      productPage.navigate(productCode);
-      productPage.searchProductSecundary(searchParam);
-      const productTitle = productPage.productDetails.productTitle();
+      it("should search from product page using secundary search bar", () => {
+        productPage.navigate(productCode);
+        productPage.searchProductSecundary(searchParam);
+        const searchResultsHeader =
+          searchResultsPage.resultsCarousel.searchHeader();
 
-      productTitle.should(($productTitle) => {
-        const text = $productTitle.text().toLowerCase();
-        const expectedText = searchParam.toLowerCase();
-        expect(text).contain(expectedText);
+        searchResultsHeader.should(($searchResultsHeader) => {
+          const text = $searchResultsHeader.text().toLowerCase();
+          const expectedText = searchParam.toLowerCase();
+          expect(text).contain(expectedText);
+        });
+
+        const searchResultsArticles =
+          searchResultsPage.resultsCarousel.searchResults();
+
+        searchResultsArticles.should(($searchResultsArticles) => {
+          const text = $searchResultsArticles.text().toLowerCase();
+          const expectedText = searchParam.toLowerCase();
+          expect(text).contain(expectedText);
+        });
       });
     });
   });

@@ -1,7 +1,7 @@
-import { SearchBar } from "../page-objects/components/searchBar";
+import { SearchBarComponent } from "./components/searchBarComponent";
 
 export class LandingPage {
-  searchBar = new SearchBar();
+  searchBar = new SearchBarComponent();
 
   navigate() {
     cy.visit("http://ec2-100-25-33-224.compute-1.amazonaws.com:8000/");

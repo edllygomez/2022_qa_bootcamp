@@ -1,14 +1,14 @@
-import { ProductDetailsComponent } from "./components/productDetailsComponent";
+import { ResultsCarouselComponent } from "./components/resultsCarouselComponent";
 import { SearchBarComponent } from "./components/searchBarComponent";
 
-export class ProductPage {
-  productDetails = new ProductDetailsComponent();
-  productCode;
+export class SearchResultsPage {
+  resultsCarousel = new ResultsCarouselComponent();
+  searchParam;
   searchBar = new SearchBarComponent();
 
-  navigate(productCode = "hoodie") {
+  navigate(searchParam = "hoodie") {
     cy.visit(
-      `http://ec2-100-25-33-224.compute-1.amazonaws.com:8000/product/${productCode}/`
+      `http://ec2-100-25-33-224.compute-1.amazonaws.com:8000/?s=${searchParam}/`
     );
   }
 

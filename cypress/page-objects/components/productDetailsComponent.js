@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-export class ProductDetails {
+export class ProductDetailsComponent {
   productTitle = () => cy.get(".product_title");
   ProductDescription = () => cy.get("#tab-description > p");
 
