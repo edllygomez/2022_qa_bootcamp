@@ -4,14 +4,15 @@ import { SearchBarPage } from "../../pages/search-bar";
 import { SearchResultsPage } from "../../pages/search-results";
 
 describe('Search from search bar', () => {
+  let searchCriteria='Hoodie'
 
     beforeEach(() => {
         cy.visit('http://ec2-100-25-33-224.compute-1.amazonaws.com:8000/');
     })//beforeEach
 
     it('should search from the search bar and show matching results', () => {
-      SearchBarPage.searchProduct('Hoodie');
-      SearchResultsPage.checkResults('Hoodie');
+      SearchBarPage.searchProduct(searchCriteria);
+      SearchResultsPage.checkResults(searchCriteria);
     });//it
 
 });//describe
