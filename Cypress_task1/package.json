@@ -1,0 +1,27 @@
+{
+  "name": "task1",
+  "version": "1.0.0",
+  "description": "first task bootcamp",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "cypress:open": "cypress open"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edllygomez/2022_qa_bootcamp.git"
+  },
+  "keywords": [
+    "akcj"
+  ],
+  "author": "AdrianaCastelblanco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edllygomez/2022_qa_bootcamp/issues"
+  },
+  "homepage": "https://github.com/edllygomez/2022_qa_bootcamp#readme",
+  "devDependencies": {
+    "cypress": "^9.7.0"
+  }
+}
