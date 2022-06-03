@@ -3,12 +3,12 @@ export class searchItem {
         getSearchResultById: () => cy.get('#woocommerce-product-search-field-0')
     }
 
-ItemInput (item){
-    this.elements.getSearchResultById().click()
-    .type(item)
-    .type('{enter}')
+    ItemInput (item){
+        this.elements.getSearchResultById().click()
+        .type(item)
+        .type('{enter}')
 
-}
+    }
 
 }
 
