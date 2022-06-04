@@ -1,7 +1,7 @@
 ///<reference types="Cypress"/>
 
 import { searchBar } from "../page-objects/components/search-bar";
-import { productPage } from "../page-objects/pages/product-page";
+import { productPage } from "../page-objects/pages/search-by-category";
 
 describe('My test', () => {
     beforeEach(()=> {
@@ -12,4 +12,8 @@ describe('My test', () => {
         searchBar.searchProduct('Logo');
         productPage.getProductTitle().should('contain.text', 'Logo');
     })
+
+    it('', () => {
+        cy.searchProduct('');
+    });
 });
