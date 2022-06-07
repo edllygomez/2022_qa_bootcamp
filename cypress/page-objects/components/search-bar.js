@@ -1,15 +1,19 @@
-export const SearchBar = {
+export class SearchBar  {
 
-    elements: {
-        getClickSearchBar: () => cy.get('input#woocommerce-product-search-field-0'),
+    elements = {
+        getSearchInputTxt: () => cy.get('#woocommerce-product-search-field-0'),
+        getSecondSearchInputTxt: () => cy.get('#search-2 .search-field')
     
-    },
+    }
 
-    searchByProduct: (productToSearch) => {
-        SearchBar.elements.getClickSearchBar()
-            .click()
-            .type(productToSearch + '{enter}');
+    searchProduct(product) {
+        this.elements.getSearchInputTxt().type(product + '{enter}');
 
-    },
+    }
 
+    secondSearchProduct(product) {
+        this.elements.getSecondSearchInputTxt().type(product + '{enter}')
+    }
 }
+
+export const SearchBarComponent = new SearchBar();
