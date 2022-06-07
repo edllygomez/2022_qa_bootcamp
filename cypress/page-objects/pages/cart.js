@@ -5,8 +5,22 @@ export class Cart {
    elements = {
     getProductNameLnk: () => cy.get('[data-title="Product"]'),
     getProductSubtotalLbl: () => cy.get('[data-title="Subtotal"]'),
+    getCouponCodeTxt: () => cy.get('#coupon_code'),
+    getApplyCouponBtn: () => cy.contains('button', 'Apply coupon'),
+    getCouponMsg: () => cy.get('[role=alert]'),
+    getCartDiscountInfo: () => cy.get('.cart-discount'),
+    getProceedToCheckoutBtn: () => cy.get('.wc-proceed-to-checkout'),
   }
-}
 
+  applyCoupon(code){
+    this.elements.getCouponCodeTxt().clear().type(code)
+    this.elements.getApplyCouponBtn().click()
+  }
+
+  clickProceedToCheckout(){
+    this.elements.getProceedToCheckoutBtn().click()
+  }
+    
+}
 
 export const CartPage = new Cart()

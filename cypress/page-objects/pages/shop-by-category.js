@@ -1,4 +1,5 @@
 export class ShopByCategory{
+     productName = 'Zipper'
 
     elements = {
         getCategoryByTextLink: (productTitle) => cy.get(`a[href*=${productTitle}]`),
@@ -9,8 +10,8 @@ export class ShopByCategory{
         this.elements.getCategoryByTextLink(category).click()
     }
 
-    searchForProduct(productName){
-        this.elements.getSearchProduct().type(`${productName}{enter}`)
+    searchForProduct(){
+        this.elements.getSearchProduct().type(`${this.productName}{enter}`)
     }
 }
 
