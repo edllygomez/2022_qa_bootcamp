@@ -1,7 +1,7 @@
 export class Checkout {
     url = '/checkout';
     title = 'Checkout';
-// Modificar lo de abajo: 
+
     elements = {
         getLoginLnk: () => cy.get('.showlogin'),
         getUsernameTxtBox: () => cy.get('#username'),
