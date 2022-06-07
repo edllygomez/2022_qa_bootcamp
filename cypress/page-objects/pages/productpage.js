@@ -1,8 +1,8 @@
 import { AlertBanner } from "../components/alertBanner";
-import { NavBar } from "../components/navBar";
+import { NavBar } from "../components/navBarComponent";
 import { ProductDetailsComponent } from "../components/productDetailsComponent";
 import { SearchBarComponent } from "../components/searchBarComponent";
-import { SlideDownBanner } from "../components/slideDownBanner";
+import { SlideDownBanner } from "../components/slideDownBannerComponent";
 
 export class ProductPage {
   productDetails = new ProductDetailsComponent();
@@ -42,6 +42,9 @@ export class ProductPage {
     this.navBar.clickOnCart();
   }
 
+  scrollBotton() {
+    cy.scrollTo("bottom");
+  }
   addOneUsingSlideDownBanner() {
     this.slideDownBanner.addToCart();
   }

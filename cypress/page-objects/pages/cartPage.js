@@ -1,16 +1,15 @@
-// import { SearchBarComponent } from "../components/searchBarComponent";
+import { CartComponent } from "../components/cartComponent";
+import { AlertBanner } from "../components/alertBanner";
 
 export class CartPage {
-  couponCodeInput = cy.get("#coupon_code");
-  couponCodeApplyButton = cy.get(".coupon > button");
-  proceedToCheckoutButton = cy.get(".checkout-button");
-  itemsOnCart = cy.get(".shop_table > tbody");
+  cart = new CartComponent();
+  alertBanner = new AlertBanner();
 
   //   navigate() {
   //     cy.visit("http://ec2-100-25-33-224.compute-1.amazonaws.com:8000/");
   //   }
 
-  clickOnCheckoutButton() {
-    this.proceedToCheckoutButton.click();
-  }
+  // clickOnCheckoutButton() {
+  //   this.proceedToCheckoutButton().click();
+  // }
 }

@@ -1,12 +1,13 @@
 {
   "devDependencies": {
+    "as-a": "^2.2.0",
     "cypress": "^9.7.0",
     "eslint": "^8.16.0",
     "eslint-plugin-cypress": "^2.12.1",
     "prettier": "^2.6.2"
   },
   "scripts": {
-    "cypress": "cypress open",
+    "cypress": "npx as-a testing npx cypress open",
     "test": "cypress run",
     "lint": "eslint ."
   }

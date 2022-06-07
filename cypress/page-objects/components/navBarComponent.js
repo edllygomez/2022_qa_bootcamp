@@ -3,8 +3,8 @@
 export class NavBar {
   cart = () => cy.get("#site-header-cart > li > .cart-contents");
   cartAmount = () =>
-    cy.get("#site-header-cart > li > a > span > .woocommerce-Price-amount");
-  cartItemsCount = () => cy.get("#site-header-cart > li > a > span > .count");
+    cy.get("#site-header-cart > li > a > .woocommerce-Price-amount");
+  cartItemsCount = () => cy.get("#site-header-cart > li > a > .count");
 
   clickOnCart() {
     this.cart().click();
