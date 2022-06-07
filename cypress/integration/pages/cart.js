@@ -5,14 +5,18 @@ export class Cart {
 
     elements = {
         getProductNameLink: () => cy.get('[data-title="Product"]'),
-        getProductSubtotalLabel: () => cy.get('[data-title="Price"]'),
+        getProductSubtotalLabel: () => cy.get('[data-title="Subtotal"]'),
+        getCouponCodeText: () => cy.get('#coupon_code'),
+        getApplyCouponButton: () => cy.contains('button', 'Apply coupon'),
+        getCouponMessage: () => cy.get('[role=alert]'),
+        getCouponInfo: () => cy.get('.cart-discount'),
     }//elementsArray
 
-}//Class
+    applyCoupon(code) {
+        this.elements.getCouponCodeText().clear().type(code);
+        this.elements.getApplyCouponButton().click();
+    }//applyCoupon
 
-// cy.url().should('include', '/cart');
-// cy.title().should('include', 'Cart');
-//cy.contains('[data-title="Product"]', 'Hoodie with Logo').should('be.visible');
-//cy.contains('[data-title="Price"]', "$45.00").should('be.visible');
+}//Class
 
 export const CartPage = new Cart();

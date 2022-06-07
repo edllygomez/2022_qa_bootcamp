@@ -1,6 +1,8 @@
 export class SearchResults {
     elements = {
-        getProductTitle: () => cy.get('a h2.woocommerce-loop-product__title'),
+        getResultsTitleLabel: () => cy.get('.page-title'),
+        getProductTitleLink: () => cy.get('a h2.woocommerce-loop-product__title, [rel="bookmark"]'),
+        getNoResultsMessage: () => cy.get('.woocommerce-info'),
     }//elements
 
     checkResults(search) {
