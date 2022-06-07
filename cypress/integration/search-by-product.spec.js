@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 
-import { LandingPage } from "../page-objects/landingPage";
-import { ProductPage } from "../page-objects/productpage";
-import { SearchResultsPage } from "../page-objects/searchResultsPage";
+import { LandingPage } from "../page-objects/pages/landingPage";
+import { ProductPage } from "../page-objects/pages/productpage";
+import { SearchResultsPage } from "../page-objects/pages/searchResultsPage";
 
 describe("Test searching capabilities", () => {
   const landingPage = new LandingPage();
@@ -10,7 +10,7 @@ describe("Test searching capabilities", () => {
   const searchResultsPage = new SearchResultsPage();
 
   const productCode = "hoodie";
-  const validSearchParams = ["Pocket", "Zipper"]; //Edit this to test more search params
+  const validSearchParams = ["Pocket"]; //Edit this to test more search params
   //const invalidSearchParams = []; //Placeholder for future negative tests
 
   validSearchParams.map((searchParam) => {

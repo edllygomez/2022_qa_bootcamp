@@ -1,4 +1,4 @@
-import { SearchBarComponent } from "./components/searchBarComponent";
+import { SearchBarComponent } from "../components/searchBarComponent";
 
 export class LandingPage {
   searchBar = new SearchBarComponent();

@@ -1,5 +1,5 @@
-import { ResultsCarouselComponent } from "./components/resultsCarouselComponent";
-import { SearchBarComponent } from "./components/searchBarComponent";
+import { ResultsCarouselComponent } from "../components/resultsCarouselComponent";
+import { SearchBarComponent } from "../components/searchBarComponent";
 
 export class SearchResultsPage {
   resultsCarousel = new ResultsCarouselComponent();
