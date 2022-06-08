@@ -10,4 +10,4 @@ export class SearchResults {
     }//checkResults
 }
 
-export const SearchResultsPage = new SearchResults();
+export const SearchResultsPage = new SearchResults()

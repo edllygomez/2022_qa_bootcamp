@@ -1,7 +1,7 @@
 export class Cart {
 
-    url = '/cart';
-    title = 'Cart';
+    url = '/cart'
+    title = 'Cart'
 
     elements = {
         getProductNameLink: () => cy.get('[data-title="Product"]'),
@@ -10,13 +10,18 @@ export class Cart {
         getApplyCouponButton: () => cy.contains('button', 'Apply coupon'),
         getCouponMessage: () => cy.get('[role=alert]'),
         getCouponInfo: () => cy.get('.cart-discount'),
+        getCheckoutButton: () => cy.get('.checkout-button'),
     }//elementsArray
 
-    applyCoupon(code) {
-        this.elements.getCouponCodeText().clear().type(code);
-        this.elements.getApplyCouponButton().click();
+    applyCoupon(coupon) {
+        this.elements.getCouponCodeText().clear().type(coupon)
+        this.elements.getApplyCouponButton().click()
     }//applyCoupon
+
+    proceedToCheckout() {
+        this.elements.getCheckoutButton().click()
+    }//proceedToCheckout
 
 }//Class
 
-export const CartPage = new Cart();
+export const CartPage = new Cart()

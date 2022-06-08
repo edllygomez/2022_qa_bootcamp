@@ -5,14 +5,14 @@ export class SearchBar {
     }//elements
 
     searchProduct(product) {
-        this.elements.getSearchBar().type(`${product}{enter}`);
+        this.elements.getSearchBar().type(`${product}{enter}`)
 
     }//searchProduct
 
     secondSearchProduct(product) {
-        this.elements.getSecondSearchBar().type(`${product}{enter}`);
+        this.elements.getSecondSearchBar().type(`${product}{enter}`)
     }//secondSearchProduct
 
 }//class
 
-export const SearchBarPage = new SearchBar();
+export const SearchBarPage = new SearchBar()

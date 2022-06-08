@@ -4,9 +4,9 @@ export class ShopByCategory {
     }//elementsArray
 
     selectCategory(category) {
-        this.elements.getCategoryByTextLink(category).click();
+        this.elements.getCategoryByTextLink(category).click()
     }//selectCategory
 
 }//class
 
-export const ShopByCategoryPage = new ShopByCategory();
+export const ShopByCategoryPage = new ShopByCategory()
