@@ -1,15 +1,14 @@
-export class searchItem {
+export class searchProduct {
     elements = {
         getSearchResultById: () => cy.get('#woocommerce-product-search-field-0')
-    }
+     }
 
-    ItemInput (item){
+    productInput (product){
         this.elements.getSearchResultById().click()
-        .type(item)
+        .type(product)
         .type('{enter}')
-
     }
 
 }
 
-export const searchItemPage = new searchItem();
+    export const searchProductPage = new searchProduct();
