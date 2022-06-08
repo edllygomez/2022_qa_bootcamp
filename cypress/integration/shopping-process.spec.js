@@ -1,7 +1,8 @@
 ///<reference types="Cypress"/>
 import {selectElementByCategoryPage} from '../page-objects/pages/select-element-by-category'
-
-
+import{cartPage} from '../page-objects/pages/cart'
+import{checkoutPage} from '../page-objects/pages/checkout'
+import{logingPage} from '../page-objects/components/login'
 describe('Shopping process', ()=>{
     beforeEach(() =>{
         cy.visit('http://ec2-100-25-33-224.compute-1.amazonaws.com:8000/');
@@ -11,29 +12,29 @@ describe('Shopping process', ()=>{
         //Search product
             //Select by category
             selectElementByCategoryPage.selectCategory();
-            //cy.get('a[href*=accessories]').click();
-            cy.url().should('include', '/accessories');
+            cy.url().should('include', '/accessories'); 
             selectElementByCategoryPage.selectProduct();
-            //cy.get('a[data-product_id="29"]').click();
             //go to cart
-            cy.get('.added_to_cart').click();
+            cartPage.addtoCart();
             cy.url().should('include', '/cart');
-            cy.get('td.product-name').first().should('includes.text','Belt');
+            cartPage.productValidation();
             //apply coupon
-            cy.get('#coupon_code').type('1461 off');
-            cy.get('button[name=apply_coupon]').click();
-            //validate id the coupon code is applied
+            cartPage.applyCoupon();
+            //validation if the coupon code is applied
             cy.get('tr.cart-discount th').should('include.text', `Coupon: 1461 off`);
 
             //Checkout
-            cy.get('.checkout-button').click();
+            checkoutPage.checkoutbtn();
             cy.title().should('includes', 'Checkout');
+
             //Login
-            cy.get('.showlogin').click();
-            //this one can be change to secret
-            cy.get('#username').click().type('automation'); //OJO
-            cy.get('#password').click().type('automation');
-            cy.get('.woocommerce-button').click();
+            logingPage.userLogin();
+            
+
+            //Get billing details
+            //cy.get('#billing_email').invoke('text');
+            cy.get('#billing_email');
+
             //search by search box
             //cy.get('#woocommerce-product-search-field-0').click().type('cap{enter}');
             //search by rigth search box
@@ -42,8 +43,9 @@ describe('Shopping process', ()=>{
             cy.get('#place_order').click();
             //order confirmation
             //cy.title().should('includes', 'Order received');
-            cy.contains('.woocommerce-order-overview__email', 'Jafeth@test.com', {timeout:40000}).should('be.visible');
-            cy.get('.woocommerce-customer-details--email').should('include.text', 'Jafeth@test.com')
+            cy.contains('.woocommerce-table__line-item a', 'Belt').should('be.visible');
+            //cy.contains('.woocommerce-order-overview__email', '@email', {timeout:40000}).should('be.visible');
+            //cy.get('.woocommerce-customer-details--email').should('contain.text', ``);
             
         //Add to cart
             //add element to the shopping car on the home page
