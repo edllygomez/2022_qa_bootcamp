@@ -1,8 +1,9 @@
 export class SelectElementByCategory{
+    url='/accessories';
     elements = {
         getCategoryByTextLnk: ()=>cy.get(`a[href*=accessories]`),
         getProductByIdLnk: ()=> cy.get('a[data-product_id="29"]'),
-        Url:'/accessories'
+        
     }
     //methods
     selectCategory(){
