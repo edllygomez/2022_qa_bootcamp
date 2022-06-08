@@ -45,38 +45,6 @@ describe('Shopping process', ()=>{
             //cy.title().should('includes', 'Order received');
             cy.contains('.woocommerce-table__line-item a', 'Belt').should('be.visible');
             //cy.contains('.woocommerce-order-overview__email', '@email', {timeout:40000}).should('be.visible');
-            //cy.get('.woocommerce-customer-details--email').should('contain.text', ``);
-            
-        //Add to cart
-            //add element to the shopping car on the home page
-
-            //add search's element
-
-
-        //View cart
-            //When the selection process is finish
-
-            //on the header
-        //Apply coupon
-            //On the cart page
-
-            //On the checkout page
-        //valide if the coupon is applied
-            //On the cart page
-
-            //On the checkout page
-        //login
-
-        //fill billing details
-
-        //fill shipping details 
-            /*
-            four options
-            1. Using default
-            2. adding new information 
-            3. using the same adress for both 
-
-            **/
-        //validate the order
+            cy.get('.woocommerce-customer-details--email').should('contain.text', `email403@gap.com`);
     })
 });
