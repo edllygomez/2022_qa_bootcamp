@@ -3,3 +3,6 @@ logs
 *.log
 
 node_modules
+
+# Cypress environments
+cypress.env.json
