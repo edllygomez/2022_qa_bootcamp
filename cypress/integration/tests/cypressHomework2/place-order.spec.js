@@ -70,7 +70,7 @@ describe('Place an order', () => {
         OrderReceivedPage.verifyOrderReceivedElements()
     })//should login, proceed to checkout, apply coupon and place an order with different address
 
-    it.only('should login, proceed to checkout, apply coupon, place an order with the same address without terms', () => {
+    it('should login, proceed to checkout, apply coupon, place an order with the same address without terms', () => {
         cy.searchProduct(searchCriteria)
         ProductTilePage.addToCart(0)
         ProductTilePage.goToCart()
