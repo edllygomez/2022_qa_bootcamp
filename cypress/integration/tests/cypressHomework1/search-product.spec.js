@@ -1,14 +1,14 @@
 ///<reference types="Cypress"/>
 
-import { SearchBarPage } from "../../pages/search-bar"
-import { SearchResultsPage } from "../../pages/search-results"
-import { ProductDetailPage } from "../../pages/product-detail"
+import { SearchBarPage } from "../../../pages/search-bar"
+import { SearchResultsPage } from "../../../pages/search-results"
+import { ProductDetailPage } from "../../../pages/product-detail"
 
 describe('Search from search bar', () => {
   let searchCriteria = 'Hoodie'
 
   beforeEach(() => {
-    cy.visit(Cypress.env('baseUrl'))
+    cy.visit('/')
   })//beforeEach
 
   it('should show multiples results for a product', () => {

@@ -1,13 +1,13 @@
 ///<reference types="Cypress"/>
 
-import { ProductTilePage } from "../pages/product-tile"
-import { ShopByCategoryPage } from "../pages/shop-by-category"
-import { CartPage } from "../pages/cart"
+import { ProductTilePage } from "../../pages/product-tile"
+import { ShopByCategoryPage } from "../../pages/shop-by-category"
+import { CartPage } from "../../pages/cart"
 
 describe('Search from Category', () => {
 
     beforeEach(() => {
-        cy.visit(Cypress.env('baseUrl'))
+        cy.visit('/')
     })//beforeEach
 
     it('should search by category and add product to cart', () => {

@@ -4,7 +4,7 @@ export class OrderReceived {
 
     elements = {
         //Order received
-        getOrderReceivedTitle: () => cy.get('.entry-title'),
+       getOrderReceivedTitle: () => cy.get('.entry-title'),
         getOrderReceivedMessage: () => cy.get('.woocommerce-notice'),
         //Order over view
         getOrderOverViewUl: () => cy.get('.woocommerce-order-overview '),
@@ -17,7 +17,7 @@ export class OrderReceived {
     }//elements
 
     verifyOrderReceivedElements() {
-        cy.url().should('include', this.url)//
+        cy.url().should('include', this.url)
         this.elements.getOrderReceivedTitle().should('contain', 'Order received')
         this.elements.getOrderReceivedMessage().should('contain', 'Thank you. Your order has been received.')
         this.elements.getOrderOverViewUl().should('be.visible')

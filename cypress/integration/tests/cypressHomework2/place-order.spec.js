@@ -1,16 +1,16 @@
 ///<reference types="Cypress"/>
 
-import { ProductTilePage } from '../../pages/product-tile'
-import { CartPage } from '../../pages/cart'
-import { CheckoutPage } from '../../pages/checkout'
-import {OrderReceivedPage} from '../../pages/order-received'
+import { ProductTilePage } from '../../../pages/product-tile'
+import { CartPage } from '../../../pages/cart'
+import { CheckoutPage } from '../../../pages/checkout'
+import {OrderReceivedPage} from '../../../pages/order-received'
 
 describe('Place an order', () => {
     let searchCriteria = 'Hoodie'
     let coupon = '1461 off'
 
     beforeEach(() => {
-        cy.visit(Cypress.env('baseUrl'))
+        cy.visit('/')
     })//beforeEach
 
     it('should search a product and add it to the cart', () => {
