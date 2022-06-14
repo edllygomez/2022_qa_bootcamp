@@ -45,9 +45,16 @@ describe('productReviews tests', () => {
         })//Delete product review and view it
 
         it('Check deleted status code is 404', () => {
-            productReviewsRequest.retrieveProductReview(productReviewID).then((response)=> {
-                expect(response.data.status).to.eq(404)
-            })
+            productReviewsRequest.retrieveProductReview(productReviewID).should((response)=> {
+               // expect(response.data.status).to.eq(404)
+               expect(response).to.deep.equal({
+                   code: "woocommerce_rest_review_invalid_id",
+                   message: "Invalid review ID.",
+                   data: {
+                       status: 404
+                   }
+               })//expect
+            })//should
         })//Check deleted status code
 
     })//context
