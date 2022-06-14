@@ -17,6 +17,7 @@ export class OrderReceived {
     }//elements
 
     verifyOrderReceivedElements() {
+        //assertions should be done in the test not in the page
         cy.url().should('include', this.url)
         this.elements.getOrderReceivedTitle().should('contain', 'Order received')
         this.elements.getOrderReceivedMessage().should('contain', 'Thank you. Your order has been received.')
