@@ -44,7 +44,7 @@ describe('productReviews tests', () => {
             ProductReviewPage.openReviews()
         })//Delete product review and view it
 
-        it('Check deleted status code', () => {
+        it('Check deleted status code is 404', () => {
             productReviewsRequest.retrieveProductReview(productReviewID).then((response)=> {
                 expect(response.data.status).to.eq(404)
             })
