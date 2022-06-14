@@ -3,7 +3,7 @@
 import { ProductTilePage } from '../../../pages/product-tile'
 import { CartPage } from '../../../pages/cart'
 import { CheckoutPage } from '../../../pages/checkout'
-import {OrderReceivedPage} from '../../../pages/order-received'
+import { OrderReceivedPage } from '../../../pages/order-received'
 
 describe('Place an order', () => {
     let searchCriteria = 'Hoodie'

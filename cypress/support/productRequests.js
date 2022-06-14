@@ -45,8 +45,20 @@ class ProductRequests {
                 password: Cypress.env('password')
             }
         })//cy.request
-    }//updateProduct
+    }//deleteProduct
+
+    retrieveProduct(productID) {
+        return cy.request({ //return because we will need the response to be saved
+            method: 'GET',
+            url: `/wp-json/wc/v3/products/${productID}`,
+            auth: {
+                user: Cypress.env('username'),
+                password: Cypress.env('password')
+            }
+        }).its('body')
+            .as('getProduct')//global variable where the response will be saved
+    }//retrieveProduct
 
 }//class
 
-export const ProductRequestPage = new ProductRequests()
+export const productRequest = new ProductRequests()
