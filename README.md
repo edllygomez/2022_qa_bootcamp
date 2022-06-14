@@ -1,6 +1,6 @@
 # 2022_qa_bootcamp
 
-## Cypress Homework 2
+## Cypress Homework 3
 
 1. ### Install dependencies
     `npm install`
