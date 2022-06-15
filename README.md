@@ -4,14 +4,14 @@ Author: Jorge Carmona
 
 This repo contains the test to cover 4 differents test cases related with the following story:
 
-"As a customer, I want to be able to complete an order after searching a product and adding it to the cart"
+"As a service, I want to be able to create, modify, delete and list a product review."
 
 These are the list of the test:
 
-* Should complete an order with default billing and shipping addresses without coupon
-* Should complete an order with default billing and shipping addresses with a valid coupon
-* Should complete an order changing billing address and using the same address for shipping
-* Should complete an order changing billing address and using another address for shipping
+* Before method to get the product id from the product name and create a review for it
+* Update the product review
+* List all product reviews
+* Delete the product review
 
 Note: To run this suite properly you should add a cypress.env.json file in the root with this structure:
 
@@ -22,6 +22,4 @@ Note: To run this suite properly you should add a cypress.env.json file in the r
 
 Besides that in this project were created the following custom commands:
 
-* searchProduct
-* viewCart
-* logIn
+* escapingProductName

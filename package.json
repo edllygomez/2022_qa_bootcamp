@@ -18,5 +18,8 @@
   "homepage": "https://github.com/edllygomez/2022_qa_bootcamp#readme",
   "devDependencies": {
     "cypress": "^9.7.0"
+  },
+  "dependencies": {
+    "faker": "^6.6.6"
   }
 }

@@ -38,3 +38,8 @@ Cypress.Commands.add('logIn', (user, pass) => {
     cy.get('#username').type(user)
     cy.get('#password').type(pass)
 });
+
+Cypress.Commands.add('escapingProductName', (productName) => {
+    console.log('product Name: '+productName)
+    return productName.replaceAll(' ', '-');
+});
