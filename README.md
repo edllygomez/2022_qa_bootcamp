@@ -1,4 +1,17 @@
 # 2022_qa_bootcamp
+
+**TASK 3** API 
+1. Open CYPRESS_TASK_3
+2. Open a terminal
+3. Run Cypress with this command **npm run cypress:open**
+4. Run review.spec.js file 
+
+Note: To run this suite properly you should add a cypress.env.json file in the root with this structure:
+
+{ "user": "your_username", "password": "your_Password" }
+
+
+**TASK 2**
 For valid credentials test case please following these steps 
 Go to CYPRESS_TASK1
 Open checkOut.js file
@@ -12,7 +25,7 @@ if you get error ajax-get_refresed_fragments please Run again or twice
 
 For Invalid credentials test case please following these steps 
 
-Go to CYPRESS_TASK1
+**Go to CYPRESS_TASK1**
 Open checkOut.js file
 Search loginCheckOutInvalid method 
 fill out the field getUserNameInput with 'automation23'
