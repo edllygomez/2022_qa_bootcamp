@@ -1,0 +1,26 @@
+{
+  "name": "apitasking",
+  "version": "1.0.0",
+  "description": "API framework crud",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edllygomez/2022_qa_bootcamp.git"
+  },
+  "keywords": [
+    "apitask3"
+  ],
+  "author": "AdrianaCastelblanco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edllygomez/2022_qa_bootcamp/issues"
+  },
+  "homepage": "https://github.com/edllygomez/2022_qa_bootcamp#readme",
+  "devDependencies": {
+    "cypress": "^9.7.0"
+  }
+}
