@@ -6,7 +6,8 @@ Search loginCheckOut method
 fill out the field getUserNameInput with 'automation'
 fill out the field getPasswordInput with 'automation'
 save the file ctrl + s for windows or command +s for Mac 
-Run the cypress project with this command npm run cypress:open 
+Run the cypress project with this command npm run cypress:open
+Select placeOrder.spec.js to run it
 if you get error ajax-get_refresed_fragments please Run again or twice 
 
 For Invalid credentials test case please following these steps 
