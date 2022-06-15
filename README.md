@@ -1,6 +1,6 @@
 # 2022_qa_bootcamp
 
-**TASK 3** API 
+**TASK 3** API positive TCs
 1. Open CYPRESS_TASK_3
 2. Open a terminal
 3. Run Cypress with this command **npm run cypress:open**
