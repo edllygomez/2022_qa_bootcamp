@@ -48,4 +48,14 @@ export class ProductPage {
   addOneUsingSlideDownBanner() {
     this.slideDownBanner.addToCart();
   }
+
+  getReviews() {
+    cy.get("#tab-title-reviews > a").click();
+    return cy.get("#comments > ol > li .description");
+  }
+
+  getRating() {
+    cy.get("#tab-title-reviews > a").click();
+    return cy.get("#comments > ol > li .rating");
+  }
 }

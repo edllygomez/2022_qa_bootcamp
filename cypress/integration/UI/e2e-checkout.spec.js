@@ -1,10 +1,10 @@
 /// <reference types="cypress" />
 
-import { ProductPage } from "../page-objects/pages/productpage";
-import { OrderPage } from "../page-objects/pages/OrderPage";
-import { CartPage } from "../page-objects/pages/cartPage";
-import { CheckoutPage } from "../page-objects/pages/checkoutPage";
-import { SecretsManager } from "../utils/secretsManager";
+import { ProductPage } from "../../page-objects/pages/productpage";
+import { OrderPage } from "../../page-objects/pages/OrderPage";
+import { CartPage } from "../../page-objects/pages/cartPage";
+import { CheckoutPage } from "../../page-objects/pages/checkoutPage";
+import { SecretsManager } from "../../utils/secretsManager";
 
 //TODO mock up current state of cart, and checkout to avoid reloading all previous pages (items on cart are stored on a cookie)
 describe("Positive TCs for checkout user flow", () => {

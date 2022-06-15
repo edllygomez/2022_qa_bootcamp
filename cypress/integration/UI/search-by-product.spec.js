@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 
-import { LandingPage } from "../page-objects/pages/landingPage";
-import { ProductPage } from "../page-objects/pages/productpage";
-import { SearchResultsPage } from "../page-objects/pages/searchResultsPage";
+import { LandingPage } from "../../page-objects/pages/landingPage";
+import { ProductPage } from "../../page-objects/pages/productpage";
+import { SearchResultsPage } from "../../page-objects/pages/searchResultsPage";
 
 describe("Test searching capabilities", () => {
   const landingPage = new LandingPage();
